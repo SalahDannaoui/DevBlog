@@ -1,0 +1,20 @@
+[
+    {
+      "id": 1,
+      "title": "Why cheese?",
+      "body": "Looking for more cheeses",
+      "user_id": 1
+    },
+    {
+      "id": 2,
+      "title": "The battle of tough exteriors",
+      "body": "Please, no thank you!",
+      "user_id": 2
+    },
+    {
+      "id": 3,
+      "title": "Do you think so?",
+      "body": "There are many opinions",
+      "user_id": 3
+    }
+  ]

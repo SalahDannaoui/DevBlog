@@ -21,7 +21,7 @@ Blog.hasMany(Comment, {
 });
 
 // comment is connected to one blog post
-Comment.belongsTo(BlogPost, {
+Comment.belongsTo(Blog, {
     foreignKey: 'blog_id'
 });
 

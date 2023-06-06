@@ -1,0 +1,40 @@
+<div class="container" id="blog-create" 
+{{#if blog}}
+data-blog-id="{{blog.id}}"
+{{/if}}>
+    <h2 class="title is-2 pt-5 pb-5 has-text-centered" id="user-id" 
+    data-user-id="{{user_id}}">{{#if blog}}Edit your blog!{{else}}
+        Make a blog!{{/if}}</h2>
+    <form class="post-form">
+        <div class="field">
+            <label class="label" for="new-title">Title:</label>
+            <div class="control">
+                
+                <input class="input" type="text" id="new-title" 
+                {{#if blog}} value="{{blog.title}}" {{/if}}/>
+                
+            </div>
+        </div>
+        <div class="field">
+            <label class="label" for="new-body">Body:</label>
+            <div class="control">
+
+                <input class="textarea" type="dropdown" id="new-body" 
+                {{#if blog}} value="{{blog.body}}"{{/if}} />
+
+            </div>
+        </div>
+
+        <div class="field">
+            <div class="control has-text-centered">
+                {{#if blog}}
+                <button class="button is-primary" id="update" type="submit">Update</button>
+                {{else}}
+                <button class="button is-primary" id="post" type="submit">Post</button>
+                {{/if}}
+            </div>
+        </div>
+    </form>
+</div>
+
+<script src="./js/create.js"> </script>

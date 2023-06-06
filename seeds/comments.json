@@ -1,0 +1,23 @@
+[
+    {
+      "comment_body": "Not enough cheese! :O",
+      "blog_id": 1,
+      "user_id": 2
+    },
+    {
+      "comment_body": "I like turtles",
+      "blog_id": 2,
+      "user_id": 1
+    },
+    {
+      "comment_body": "yes... and no",
+      "blog_id": 2,
+      "user_id": 3
+    },
+    {
+      "comment_body": "OHHHH boy",
+      "blog_id": 3,
+      "user_id": 1
+    }
+  ]
+  

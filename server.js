@@ -15,8 +15,7 @@ const morgan = require('morgan')
 
 
 const app = express();
-const PORT = 3001;
-// const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8080;
 
 // Sets up session and connect to our Sequelize db
 const sess = {

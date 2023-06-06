@@ -1,0 +1,80 @@
+<div class="container">
+    <div class="card">
+        <div class="card-content">
+            <h4 class="is-size-7">{{format_date blog.updatedAt}}</h4>
+            <h3 class="is-size-5 has-text-weight-light has-text-success is-underlined mt-2" id="username"
+                data-blog-owner="{{blog.User.id}}">
+                {{blog.User.username}}</h3>
+            <h2 id="blog-title" data-blog-id="{{blog.id}}" class="title is-2 mt-2">
+                {{blog.title}}</h2>
+            <div class="columns is-mobile">
+                <div class="column">
+                    <div class="is-hidden" id="edit-blog" data-user-id="{{user_id}}">
+                        <button class="button is-small is-warning p-4 is-size-6 is-fullwidth">Edit</button>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="is-hidden" id="delete-blog" data-user-id="{{user_id}}">
+                        <button class="button is-small is-danger p-4 is-size-6 is-fullwidth">Delete</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="blog-body">
+                <p>{{blog.body}}</p>
+            </div>
+
+        </div>
+    </div>
+    <hr>
+    <div class="card comments">
+
+        <h3 class="title is-4 mt-2">Comments</h3>
+
+
+        {{#each comments as |comment|}}
+
+        <div class="one-comment mt-2">
+
+            <div class="comment-body">
+                <h3 class="is-size-6 has-text-weight-light has-text-success is-underlined"> {{User.username}}</h3>
+
+                <h3 class="is-size-5">{{comment_body}}</h3>
+
+                <h4 class="is-size-7">{{format_date updatedAt}}</h4>
+
+            </div>
+            <button class="button is-small is-danger comment-delete p-4 is-size-6 is-hidden" data-comment-user="{{User.id}}"
+                data-id="{{id}}">Delete</button>
+        </div>
+
+        {{else}}
+        <h4>No Comments Yet</h4>
+
+
+        {{/each}}
+    </div>
+    {{#if logged_in}}
+    <div class="card-content">
+        <form class="comment-form" id="user-id" data-user-id="{{user_id}}">
+            <div class="field">
+                <label class="label" for="new-comment">Leave a comment:</label>
+                <div class="control">
+                    <input class="textarea" type="text" id="new-comment" />
+                </div>
+            </div>
+            <div class="field">
+                <div class="control has-text-centered">
+                    <button class="button is-primary p-4 is-size-6 is-fullwidth" type="submit">Post</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    {{else}}
+    <h4 class="has-text-centered pt-6 pb-6 is-size-4">Please <a href="/login">login</a> or <a href="/signup">sign up</a> to leave a comment
+    </h4>
+    {{/if}}
+</div>
+</div>
+
+<script src="./js/viewblog.js"></script>
