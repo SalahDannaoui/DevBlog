@@ -1,17 +1,16 @@
 <div class="container" id="blog-all">
     <div class="container" id="blogs">
         {{#if userPosts}}
-        <h2 class="title is-2 pt-5 has-text-centered" 
-        id="user-id" data-user-id="{{user_id}}">My Posts</h2>
+        <h2 class="title is-2 pt-5 has-text-centered" id="user-id" data-user-id="{{user_id}}">My Blogs</h2>
         {{else}}
-        <h1 class="has-text-primary-dark title is-1 pt-6 has-text-centered"
-        id="user-id" data-user-id="{{user_id}}">The Dev Blog</h1>
+        <h1 class="has-text-dark title is-1 pt-6 has-text-centered" id="user-id" data-user-id="{{user_id}}">The
+            Dev Blog</h1>
         {{/if}}
 
         {{#if logged_in}}
         <div class="column">
             <a href="/blogs/create">
-                <button class="button is-small is-success m-0 p-4 is-fullwidth is-size-6">+ Post</button>
+                <button class="button is-small is-success m-0 p-4 is-fullwidth is-size-6">Post</button>
             </a>
         </div>
         {{else}}
@@ -26,22 +25,27 @@
                 <div class="blog-post">
                     <a href="/{{id}}" class="has-text-black">
                         <div class="card-content">
-                            <h4 class="is-size-7">{{format_date updatedAt}}</h4>
-                            <h2 class="is-size-3 has-text-weight-bold">{{title}}</h2>
+                            <h4 class="is-size-5">{{format_date updatedAt}}</h4>
+                            <h2 class="is-size-2 has-text-weight-bold">{{title}}</h2>
 
-                            <h3 class="is-size-5 has-text-weight-light has-text-success">{{User.username}}
+                            <h3 class="is-size-4 has-text-weight-light has-text-success">{{User.username}}
                             </h3>
-                            <h3 class="is-size-5 has-text-weight-light pt-5 pb-5">{{body}}</h3>
+                            <h3 class="is-size-3 has-text-weight-light pt-5 pb-5">{{body}}</h3>
                         </div>
                 </div>
                 </a>
-                <button href="/{{id}}" class="button is-small is-info p-4 is-size-6 view-blog"
-                    data-blog-id="{{id}}">View</button>
-                <button class="button is-small is-warning edit-blog is-hidden m-0 p-4 is-full is-size-6"
-                    data-blog-id="{{id}}" data-blog-owner="{{User.id}}">Edit</button>
-                <button class="button is-small is-danger delete-blog is-hidden m-0 p-4 is-full is-size-6"
-                    data-blog-id="{{id}}" data-blog-owner="{{User.id}}">Delete</button>
-
+                <div style="text-align: center">
+                    <button href="/{{id}}" class="button is-small is-info m-1 p-4 is-size-6 is-rounded view-blog"
+                        data-blog-id="{{id}}">View</button>
+                </div>
+                <div style="text-align: center">
+                    <button class="button is-small is-warning edit-blog is-hidden m-1 p-4 is-full is-size-6 is-rounded"
+                        data-blog-id="{{id}}" data-blog-owner="{{User.id}}">Edit</button>
+                </div>
+                <div style="text-align: center">
+                    <button class="button is-small is-danger delete-blog is-hidden m-1 p-4 is-full is-size-6 is-rounded"
+                        data-blog-id="{{id}}" data-blog-owner="{{User.id}}">Delete</button>
+                </div>
 
             </div>
 

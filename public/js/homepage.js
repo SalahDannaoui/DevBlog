@@ -5,8 +5,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     deleteButtons.forEach(button => {
         const blogOwner = button.getAttribute('data-blog-owner');
-        console.log('blogOwner', blogOwner)
-        console.log('userID', userID)
         if (blogOwner === userID) {
             button.classList.remove('is-hidden');
         } else {
@@ -16,8 +14,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     editButtons.forEach(button => {
         const blogOwner = button.getAttribute('data-blog-owner');
-        console.log('blogOwner', blogOwner)
-        console.log('userID', userID)
         if (blogOwner === userID) {
             button.classList.remove('is-hidden');
         } else {

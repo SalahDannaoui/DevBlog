@@ -1,0 +1,8 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    height: 100%;
+    padding-top: 10px;
+}
